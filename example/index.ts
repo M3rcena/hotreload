@@ -1,8 +1,8 @@
-const { hotReload } = require("../../index");
 // const { hotReload } = require("hotreload"); // you should require from a package.
+import { hotReload } from "../index";
 
 // you have 30 seconds, to change the project files: utils/delay.js, utils/uuId.js, data.json, exports/stonks.js
-require("./exports/stonks.js")();
+require("./exports/stonks.ts")();
 
 async function reloadProject() {
     const res = await hotReload({
@@ -10,9 +10,12 @@ async function reloadProject() {
         onlyReload: [ "**/*.js", "**/*.json" ], // only reload stuff which ends with *.js or **/*.json
         functionsToLoad: [ // array of objects, with pathGlobs, and callbackFunction, which get's executed when the pathGlob match is true
             {
-                pathGlob: "**/exports/**/*.js", callbackFunction: (path, pull) => {
-                    pull() // start it after everything is reloaded to wait for .json
-                } // start initalizers
+                pathGlob: "**/exports/**/*.ts",
+                callbackFunction: (path, pull) => {
+                    pull();
+                },
+                path: "", // Pass it somehow
+                pull: undefined // And this
             }
         ]
     })

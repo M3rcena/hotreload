@@ -1,8 +1,8 @@
-const { delay } = require("../utils/delay");
-const { getUUID } = require("../utils/uuId");
-const JsonData = require("../data.json");
+import { delay } from "../utils/delay";
+import { getUUID } from "../utils/uuId";
+import JsonData from "../data.json" assert { type: "json" };
 // start script
-module.exports = async () => {
+export default async () => {
     console.log(JsonData)
     for(let i = 0; i < 5; i++) {
         console.log(getUUID());
