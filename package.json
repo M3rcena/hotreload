@@ -1,14 +1,15 @@
 {
   "name": "hotreload",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Nodejs projet hot reloader - reload your packages, files and caches easily.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tomato6966/hotreload.git"
+    "url": "git+https://github.com/M3rcena/hotreload.git"
   },
   "keywords": [
     "nodejs",
@@ -20,7 +21,13 @@
   "author": "Tomato6966",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Tomato6966/hotreload/issues"
+    "url": "https://github.com/M3rcena/hotreload/issues"
   },
-  "homepage": "https://github.com/Tomato6966/hotreload#readme"
+  "homepage": "https://github.com/M3rcena/hotreload#readme",
+  "dependencies": {
+    "minimatch": "^9.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12"
+  }
 }
